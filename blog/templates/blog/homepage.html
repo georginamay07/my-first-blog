@@ -1,43 +1,70 @@
 {% extends 'blog/base.html' %}
 {% block slideshow %} 
-<div class="slideshow-container">
-
-    <div class="mySlides">
-      <img src="../../static/images/chancellors-court-blossom.jpg" style="width:100%">
-    </div>
-    
-    <div class="mySlides">
-      <img src="../../static/images/MoreLondon_5.jpg"style="width:100%">
-    </div>
-    
-    <div class="mySlides">
-      <img src="../../static/images/coding.jpg" style="width:100%">
-    </div>
-    
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Menu -->
+  <ol class="carousel-indicators">
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Items -->
+  <div class="carousel-inner">
+      
+      <div class="item active">
+          <img src="../../static/images/chancellors-court-blossom.jpg" alt="Slide 1" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>My Second Year at the University of Birmingham</h5>
+          </div>
+      </div>
+      <div class="item">
+          <img src="../../static/images/MoreLondon_5.jpg" alt="Slide 2" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Looking forward to my placement year at PwC</h5>
+          </div>
+      </div>
+      <div class="item">
+          <img src="../../static/images/coding.jpg" alt="Slide 3" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Django and how it has enabled me to make this website</h5>
+          </div>
+      </div>
+  </div> 
+  <a href="#carousel" class="left carousel-control" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a href="#carousel" class="right carousel-control" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
-<a class="prev" onclick="plusDivs(-1)">&#10094;</a>
-<a class="next" onclick="plusDivs(1)">&#10095;</a>
-
-</div>  
-
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-        showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-        }
-        x[slideIndex-1].style.display = "block";  
-        }
-    </script>
+<p>My name is Georgina Cottrell and I am a Technology Degree Apprentice studying Computer Science at the University of Birmingham.  I have just finished
+  my second year and I am now looking forward to my placement year which starts in September.  As a Technology Degree Apprentice I am able to
+complete my degree at the same time as collecting valuable work experience at PwC (PriceWaterhouseCooper).  Throughout my degree I have learnt valuable
+skills in many of my modules, including, programming, leadership and communication skills.  I have created this website as a part of my Bridging
+Coursework, and for this I have explained further into what I have learnt and what I look forward to learn in multiple blog posts which can be viewed from
+the navigation bar.</p>
+<div class="row">
+  <div class="column">
+    <img src="../../static/images/compsci.jpg" alt="Image 1" style="width:100%">
+    <div class="overlay">
+    </div>
+  </div>
+  <div class="column">
+    <img src="../../static/images/PwC.jpg" alt="Image 2" style="width:100%">
+    <div class="overlay">
+    </div>
+  </div>
+  <div class="column">
+    <img src="../../static/images/django.png" alt="Image 3" style="width:100%">
+    <div class="overlay">
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript">
+  //starts the carousel
+   $document.ready(function () {
+     $('#carousel').carousel();
+   });
+</script>
 {% endblock %}
