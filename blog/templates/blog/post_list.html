@@ -2,18 +2,20 @@
 
 {% block content %} 
     {% block add %}
+    <div class="add">
         {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
+    </div>
     {% endblock %}
      {% for post in posts %}
         <div class="post">
              <div class="date">
-                 <p>published: {{ post.published_date }}</p>
                     </div>
                         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                         <p>{{ post.text|linebreaksbr }}</p>
                     </div>
+                    <p>published: {{ post.published_date }}</p>
      {% endfor %}
 {% endblock %}
 

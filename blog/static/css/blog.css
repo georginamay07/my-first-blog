@@ -49,7 +49,7 @@ body {
     text-decoration: none;
 }
 .content {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 h1, h2, h3, h4 {
@@ -61,7 +61,7 @@ h5 {
     font-weight: 300;
     font-size: 20pt; 
 }
-p {
+.info {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 300;
     font-size: 10pt; 
@@ -71,6 +71,14 @@ p {
     margin-top:0; 
     padding-bottom:20px;
 }
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: 10pt; 
+    margin-top:0; 
+    padding-bottom:10px;
+}
+
 
 .date {
     color: #828282;
@@ -85,13 +93,33 @@ p {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: black;
+    color: #87CEEB;
     float: right;
     font-size: 26pt;
-    margin-right: 20px;
+    padding-top:10px;
 }
 
+.top-menu:hover {
+    color:#0099ff;
+}
+
+.page-footer{
+    background-color: #87CEEB;
+    height:50px;
+}
+.footer-copyright, .footer-copyright:hover{
+    padding-top:15px;
+    color:white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.footer-copyright a {
+    text-decoration: none;
+}
 .post {
+    margin-bottom: 70px;
+}
+.add {
     margin-bottom: 70px;
 }
 

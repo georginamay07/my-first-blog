@@ -27,13 +27,22 @@
     </nav>
         {% block slideshow %}
         {% endblock %}
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
+        <div class="content container" style="width:100%">
+            <div class="row" style="width:100%">
+                <div class="col-md-8" style="width:100%">
                     {% block content %}
                     {% endblock %}
                 </div>
             </div>
         </div>
+        <footer class="page-footer">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">Enquiries:                                         
+              <a href="mailto: GMC851@student.bham.ac.uk">GMC851@student.bham.ac.uk</a>
+            </div>
+            <!-- Copyright -->
+          
+          </footer>
     </body>
 </html>
