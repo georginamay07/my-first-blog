@@ -14,19 +14,19 @@
       <div class="item active">
           <img src="../../static/images/chancellors-court-blossom.jpg" alt="Slide 1" />
           <div class="carousel-caption d-none d-md-block">
-            <h5>My Second Year at the University of Birmingham</h5>
+            <h5>My Second Year at the University of Birmingham...</h5>
           </div>
       </div>
       <div class="item">
           <img src="../../static/images/MoreLondon_5.jpg" alt="Slide 2" />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Looking forward to my placement year at PwC</h5>
+            <h5>Looking forward to my placement year at PwC...</h5>
           </div>
       </div>
       <div class="item">
           <img src="../../static/images/coding.jpg" alt="Slide 3" />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Django and how it has enabled me to make this website</h5>
+            <h5>Django and how it works...</h5>
           </div>
       </div>
   </div> 
@@ -43,23 +43,26 @@ complete my degree at the same time as collecting valuable work experience at Pw
 skills in many of my modules, including, programming, leadership and communication skills.  I have created this website as a part of my Bridging
 Coursework, and for this I have explained further into what I have learnt and what I look forward to learn in multiple blog posts which can be viewed from
 the navigation bar.</p>
-<div class="row">
-  <div class="column">
-    <img src="../../static/images/compsci.jpg" alt="Image 1" style="width:100%">
+<div class="number">
+    <img class="image" src="../../static/images/compsci.jpg" alt="Image 1" style="width:100%">
     <div class="overlay">
+      <a href="{% url 'post_list' %}" class="text">This year at the University of Birmingham has been different to any other year that a student has had...
+      </a>
     </div>
-  </div>
-  <div class="column">
-    <img src="../../static/images/PwC.jpg" alt="Image 2" style="width:100%">
-    <div class="overlay">
-    </div>
-  </div>
-  <div class="column">
-    <img src="../../static/images/django.png" alt="Image 3" style="width:100%">
-    <div class="overlay">
-    </div>
-  </div>
 </div>
+<div class="number">
+    <img class="image" src="../../static/images/PwC.jpg" alt="Image 2" style="width:100%">
+    <div class="overlay">
+      <a href="{% url 'post_list' %}" class="text">Next year I am looking forward to my placement year with PwC. Due to COVID-19 I think I will be working from home for the majority of my placement...</div>
+      </a>
+</div>
+<div class="number">
+    <img class="image" src="../../static/images/django.png" alt="Image 3" style="width:100%">
+    <div class="overlay">
+      <a href="{% url 'post_list' %}" class="text">Due to exams being cancelled I was asked to create a blogging website as part of my bridging coursework into my next academic year, where I should use Python and Django...</div>
+      </a>
+</div>
+
 
 <script type="text/javascript">
   //starts the carousel
