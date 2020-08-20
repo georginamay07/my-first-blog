@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form class="form-horizontal">
+
+  <div id="profile-container">
+    <image id="profileImage" src="../../static/images/download.png" />
+    <input id="imageUpload" type="file" 
+        name="profile_photo" placeholder="Photo" required="" capture>
+  </div>
+ 
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="edit" class="btn btn-default" id="edit">Edit</button>
+      <button type="submit" class="btn btn-default" id="save" hidden>Save</button>
+    </div>
+  </div>
+
+</form>
+
+<script>
+    $("#profileImage").click(function(e) {
+        $("#imageUpload").click();
+    });
+
+    function fasterPreview( uploader ) {
+        if ( uploader.files && uploader.files[0] ){
+              $('#profileImage').attr('src', 
+                window.URL.createObjectURL(uploader.files[0]) );
+        }
+    }
+
+    $("#imageUpload").change(function(){
+        fasterPreview( this );
+    });
+</script>
+{% endblock %}

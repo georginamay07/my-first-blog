@@ -10,6 +10,9 @@ def post_list(request):
 
 def homepage(request):
     return render(request, 'blog/homepage.html')
+    
+def cv(request):
+    return render(request, 'blog/cv.html')
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
