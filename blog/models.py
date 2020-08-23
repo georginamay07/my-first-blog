@@ -16,3 +16,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class CV(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    job_title = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    mobile = models.CharField(max_length=11)
+    linked = models.CharField(max_length=200)
+    profile = models.TextField()
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.name
