@@ -22,7 +22,7 @@ def cv(request):
 def cv_edit(request):
     cv = CV.objects.all()[:1].get()
     if request.method == "POST":
-        form = CVForm(request.POST, instance=cv)
+        form = CVForm(request.POST, request.FILES, instance=cv)
         if form.is_valid():
             cv = form.save(commit=False)
             cv.author = request.user

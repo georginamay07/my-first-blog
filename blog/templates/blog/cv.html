@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="cv">
-<form class="form-horizontal">
+<form class="form-horizontal" enctype="multipart/form-data">
 
     <img class="profile_picture" src="../../static/images/profile.jpg">
     <div class="contact">
@@ -23,30 +23,25 @@
       <h2 class="cv_name" style="font-weight:bold;">{{ cv.name }}</h2>
       <h3 class="cvjob">{{ cv.job_title }}</h3>
       <hr/>
-      <h2 style="font-style:italic" class="profile_title">{{ cv.profile_title}}</h2>
-      <p class="profile">{{ cv.profile_text|linebreaksbr }}</p>
+      <h2 style="font-style:italic" class="profile_title">Professional Profile</h2>
+      <p class="profile">{{ cv.professional_profile|linebreaksbr }}</p>
       <hr/>
-      <h2 style="font-style:italic">{{ cv.work_experience_title }}</h2>
-      <h3>{{ cv.work_experience_header }}</h3>
+      <h2 style="font-style:italic">Work Experience</h2>
+      <h3>{{ cv.work_experience_location }}</h3>
       <div class="work_date">
         <h4>{{ cv.work_experience_date}}</h4>
       </div>
-      <p>{{ cv.work_experience_text|linebreaksbr }}</p>
-      <h3>{{ cv.work_experience_header_2 }}</h3>
-      <div class="work_date">
-        <h4>{{ cv.work_experience_date_2}}</h4>
-      </div>
-      <p>{{ cv.work_experience_text_2|linebreaksbr }}</p>
+      <p>{{ cv.work_experience_description|linebreaksbr }}</p>
       <hr/>
-      <h2 style="font-style:italic">{{ cv.education_title}}</h2>
-      <h3>{{ cv.education_header}}</h3>
+      <h2 style="font-style:italic">Education</h2>
+      <h3>{{ cv.education_location}}</h3>
       <div class="education_date">
         <h4>{{ cv.education_date}}</h4>
       </div>
-      <p>{{ cv.education_text|linebreaksbr }}</p>
+      <p>{{ cv.education_description|linebreaksbr }}</p>
       <hr/>
-      <h2 style="font-style:italic">{{ cv.additional_skills_title}}</h2>
-      <p>{{ cv.additional_skills_text|linebreaksbr }}</p>
+      <h2 style="font-style:italic">Additional Skills</h2>
+      <p>{{ cv.additional_skills_description|linebreaksbr }}</p>
     </div>
 
 </form>
