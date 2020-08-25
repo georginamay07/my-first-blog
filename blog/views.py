@@ -5,6 +5,8 @@ from .models import CV
 from .forms import PostForm
 from .forms import CVForm
 from django.shortcuts import redirect
+from django.forms import formset_factory 
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
