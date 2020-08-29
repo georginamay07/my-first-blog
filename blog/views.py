@@ -2,10 +2,13 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
 from .models import CV
+from .models import Work
+from .models import Education
 from .forms import PostForm
 from .forms import CVForm
+from .forms import EducationForm
 from django.shortcuts import redirect
-from django.forms import formset_factory 
+from django.forms import inlineformset_factory 
 
 
 def post_list(request):
@@ -17,21 +20,9 @@ def homepage(request):
     
 def cv(request):
     cv = CV.objects.all()[:1].get()
-    return render(request, 'blog/cv.html', {'cv': cv})
-
-def cv_edit(request):
-    cv = CV.objects.all()[:1].get()
-    if request.method == "POST":
-        form = CVForm(request.POST, request.FILES, instance=cv)
-        if form.is_valid():
-            cv = form.save(commit=False)
-            cv.author = request.user
-            cv.save()
-        return render(request, 'blog/cv.html', {'cv':cv})
-    else:
-        form = CVForm(instance=cv)
-    return render(request, 'blog/cv_edit.html', {'form': form})
-
+    works= Work.objects.all()
+    education = Education.objects.all()
+    return render(request, 'blog/cv.html', {'works': works, 'cv': cv, 'education':education})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
