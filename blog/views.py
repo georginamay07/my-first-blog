@@ -9,6 +9,7 @@ from .forms import CVForm
 from .forms import EducationForm
 from django.shortcuts import redirect
 from django.forms import inlineformset_factory 
+from django.http import HttpResponse
 
 
 def post_list(request):
